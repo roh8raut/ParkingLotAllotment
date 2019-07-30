@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ParkingLotAllotment';
+  // tabLabels: Array<string> = ['park a vehicle', 'remove a vehicle', 'Number of available Slots', 'get Slot Number'];
 }
