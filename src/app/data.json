@@ -2,21 +2,21 @@
     {
         "label": "park a vehicle", 
         "isInput": true,
-        "id": "addSlot"
+        "id": "1"
     },
     {
         "label": "remove a vehicle",
         "isInput": true,
-        "id": "removeSlot"
+        "id": "2"
     },
     {
-        "label": "Number of available Slots",
+        "label": "No. of available Slots",
         "isInput": false,
-        "id": "showSlots"
+        "id": "3"
     },
     {
         "label": "get Slot Number",
         "isInput": true,
-        "id": "getSlot"
+        "id": "4"
     }
 ]

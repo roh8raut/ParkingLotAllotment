@@ -1,0 +1,6 @@
+<div class="container">
+    <ng-container *ngFor="let obj of tabsData">
+        <div class="tabs" [ngClass]= "(obj.id%2==0)?'right':'left'">{{obj.label}}</div>
+    </ng-container>
+    <app-form-result></app-form-result>
+</div>
