@@ -1,6 +1,17 @@
 <div class="container">
     <ng-container *ngFor="let obj of tabsData">
-        <div class="tabs" [ngClass]= "(obj.id%2==0)?'right':'left'">{{obj.label}}</div>
+        <div class="flip-card">
+                <div class="flip-card-face"  [ngClass]= "(obj.id%2==0)?'right_card':'left_card'">
+                        <div class="card__face card__face--front" >front</div>
+                        <div class="card__face card__face--back" (click)="cardClicked(obj)">{{obj.label}}</div>                    
+                </div>  
+        </div>
     </ng-container>
-    <app-form-result></app-form-result>
+    <app-form-result    (submitRegNum)="callApiService($event)" 
+                        (hideOverlay)='hideOverlay($event)'
+                        [formObj]="formObj" #overlay
+                        [data]="response"
+                        [error]="error"
+                        >
+    </app-form-result>
 </div>

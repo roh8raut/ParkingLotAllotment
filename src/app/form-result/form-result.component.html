@@ -1,5 +1,34 @@
 <div class="overlay">
     <div class="form-container">
-        ssss
+        <span class="cancel" (click)="onHideOverlay()"> &#10008;</span>
+        <div *ngIf="show; else loader">
+            <h2 >{{formObj?.label}}</h2>        
+            <input type="text" maxlength="4"  *ngIf="formObj?.isInput" [(ngModel)]="regNum" (keydown)="onInputChangeVerify($event)">
+            <p class="errMsg" #errMsg>Please enter 4 digits</p>
+            <button [disabled]="!(regNum && (regNum.length > 3) || !(formObj?.isInput))" (click)="onSubmit(formObj.label)">Submit</button>
+        </div>
+
+         <ng-template #loader>  
+         <ng-container [ngSwitch]="true">
+            
+            <ng-container *ngSwitchCase="!(error || data)">Loading...</ng-container>
+            <ng-container *ngSwitchCase="error !== undefined">{{error}}</ng-container>
+            
+            <ng-container *ngSwitchCase="data !== undefined">
+                    <div *ngIf="(data && data.slots); else others">
+                        <ul>                        
+                            <li *ngFor="let li of data.slots">{{li}}</li>
+                        </ul>
+                    </div>
+
+                    <ng-template #others>                        
+                        <div>{{data.msg}}</div>
+                    </ng-template> 
+                
+                   
+            </ng-container>
+
+        </ng-container>
+        </ng-template>
     </div>
 </div>

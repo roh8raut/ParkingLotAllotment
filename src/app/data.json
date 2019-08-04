@@ -2,21 +2,26 @@
     {
         "label": "park a vehicle", 
         "isInput": true,
-        "id": "1"
+        "id": "1",
+        "result": "Your car is parked succesfully. your SlotNumber is:"
     },
     {
         "label": "remove a vehicle",
         "isInput": true,
-        "id": "2"
+        "id": "2",
+        "result": "Your car is removed from our parking space.Thankyou"
+
     },
     {
         "label": "No. of available Slots",
         "isInput": false,
-        "id": "3"
+        "id": "3",
+        "result": "Slots which are vacant:"
     },
     {
         "label": "get Slot Number",
         "isInput": true,
-        "id": "4"
+        "id": "4",
+        "result": "your car is parked in slot."
     }
 ]

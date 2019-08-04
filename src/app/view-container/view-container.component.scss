@@ -1,20 +1,72 @@
+
 .container {
     display: block;
+    // position: relative;
 }
 
-.tabs {
-    width: 200px;
-    height: 280px;
+.flip-card {
+    height: 255px;
+    width: 190px;
+    perspective: 600px;
+    // animation: pop linear 0.7s infinite alternate;
+}
+
+.flip-card-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     border: 1px solid black;
     border-radius: 8px;
-    margin-top: 20px;
-}
+    backface-visibility: hidden;
+  }
 
-.right {
-    float: right;
+.card__face--front {
+    // background: red;
+  }
+  
+.card__face--back {
+    // background: blue;
+    transform: rotateY( 180deg );
+  }
+
+.flip-card-face:hover {
+    transform: rotateY(180deg);
+  }
+
+.right_card {
+    left: 195px;
 }
 
 .left {
     float: left;
 }
+
+.drop {
+          animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes pop {
+  0%   {transform: scale(1)}
+  50%  {transform: scale(1.1)}
+  100% {transform: scale(1.2)}
+} 
+
+@media only screen and (max-width:375px) {
+  .flip-card {
+    width: 47%;
+}
+  .right_card {
+    left: 110%;
+  }
+}
+
+
 
