@@ -28,7 +28,10 @@ export class BackendApiService {
   }
 
   getSlot(regNum: string) {
-    return this.http.get(`${url}/${regNum}`, httpOptions)
+    // tslint:disable-next-line:object-literal-shorthand
+    const options = Object.assign(httpOptions, {params: {regNum: regNum}});
+    console.log(options);
+    return this.http.get(`${url}`, options)
                     .pipe(
                       catchError(this.handleError)
                     );
@@ -42,10 +45,11 @@ export class BackendApiService {
   }
 
   getAvailableSlots() {
-   return this.http.get(`${url}/availableSlots`, httpOptions)
-                    .pipe(
-                      catchError(this.handleError)
-                    );
+
+    return this.http.get(`${url}/availableSlots`, httpOptions)
+                      .pipe(
+                        catchError(this.handleError)
+                      );
   }
 
   handleError( err: HttpErrorResponse) {
