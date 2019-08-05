@@ -26,15 +26,25 @@
     border: 1px solid black;
     border-radius: 8px;
     backface-visibility: hidden;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 235px;
   }
 
-.card__face--front {
-    // background: red;
-  }
+// .card__face--front {
+//     // text-align: center;
+//     // vertical-align: middle;
+//     // line-height: 235px;
+//   }
   
 .card__face--back {
     // background: blue;
     transform: rotateY( 180deg );
+    span {
+      line-height: normal;
+      vertical-align: middle;
+      display: inline-block;
+    }
   }
 
 .flip-card-face:hover {
@@ -49,14 +59,12 @@
     float: left;
 }
 
-.drop {
-          animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
 @keyframes pop {
   0%   {transform: scale(1)}
-  50%  {transform: scale(1.1)}
-  100% {transform: scale(1.2)}
+  25%  {transform: scale(1.02)}
+  50%  {transform: scale(1.03)}
+  75%  {transform: scale(1.04)}
+  100% {transform: scale(1.05)}
 } 
 
 @media only screen and (max-width:375px) {
@@ -67,6 +75,22 @@
     left: 110%;
   }
 }
+
+
+
+// position: absolute;
+// height: 100%;
+// width: 100%;
+// border: 1px solid black;
+// border-radius: 8px;
+// -webkit-backface-visibility: hidden;
+// backface-visibility: hidden;
+// text-align: center;
+// vertical-align: middle;
+// line-height: 235px;
+// box-shadow: 0px 3px 2px 2px #E3D9BF
+
+//7C0A00 red
 
 
 

@@ -27,8 +27,8 @@ export class FormResultComponent implements OnInit {
 
   onInputChangeVerify(e: any) {
     const numRegEx = new RegExp('^[0-9]$');
-
-    if (!(e.keyCode === 8 || e.keyCode === 16 || e.keyCode === 39 || e.keyCode === 40)) {
+    // console.log(e.ctrlKey, e);
+    if (!(e.keyCode === 8 || e.keyCode === 16 || e.keyCode === 39 || e.keyCode === 40 || e.ctrlKey === true)) {
       if (!numRegEx.test(e.key)) {
           this.errMsg.nativeElement.style.display = 'block';
           return false;

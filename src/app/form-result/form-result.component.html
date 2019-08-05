@@ -2,10 +2,10 @@
     <div class="form-container">
         <span class="cancel" (click)="onHideOverlay()"> &#10008;</span>
         <div *ngIf="show; else loader">
-            <h2 >{{formObj?.label}}</h2>        
-            <input type="text" maxlength="4"  *ngIf="formObj?.isInput" [(ngModel)]="regNum" (keydown)="onInputChangeVerify($event)">
+            <h2 class="form--header">{{formObj?.label}}</h2>        
+            <input type="text" maxlength="4" class="regNum__box" *ngIf="formObj?.isInput" [(ngModel)]="regNum" (keydown)="onInputChangeVerify($event)">
             <p class="errMsg" #errMsg>Please enter 4 digits</p>
-            <button [disabled]="!(regNum && (regNum.length > 3) || !(formObj?.isInput))" (click)="onSubmit(formObj.label)">Submit</button>
+            <button class="submit__btn" [class.allSlots]="formObj?.id == 3" [disabled]="!(regNum && (regNum.length > 3) || !(formObj?.isInput))" (click)="onSubmit(formObj.label)">{{formObj?.btn_label}}</button>
         </div>
 
          <ng-template #loader>  
@@ -22,7 +22,8 @@
                     </div>
 
                     <ng-template #others>                        
-                        <div>{{data.msg}}</div>
+                        <div>{{data.msg}}<span *ngIf="data.slotAlloted">{{data.slotAlloted}}</span></div>
+                        <div *ngIf="data.amountToBePaid">{{data.amountToBePaid}}</div>
                     </ng-template> 
                 
                    

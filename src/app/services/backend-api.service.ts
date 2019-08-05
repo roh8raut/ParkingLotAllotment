@@ -20,7 +20,6 @@ export class BackendApiService {
 
   parkAVehicle(regNum: string) {
     const body = {regNum: regNum};
-    console.log(regNum, body);
     return this.http.post(`${url}`, body, httpOptions)
                     .pipe(
                       catchError(this.handleError)
@@ -45,7 +44,6 @@ export class BackendApiService {
   }
 
   getAvailableSlots() {
-
     return this.http.get(`${url}/availableSlots`, httpOptions)
                       .pipe(
                         catchError(this.handleError)
