@@ -38,11 +38,8 @@ export class ViewContainerComponent implements OnInit {
   }
 
   callApiService(obj: any) {
-
-    if (obj.id.indexOf('park') > -1) {
-      console.log("park");
+    if (obj.id === 1) {
       this.backEndService.parkAVehicle(obj.regNum).subscribe((res: any) => {
-        console.log("this.reposne", res);
         this.response = res;
       },
       (err) => {
@@ -50,9 +47,17 @@ export class ViewContainerComponent implements OnInit {
       });
     }
 
-    if (obj.id.indexOf('available') > -1) {
+    if (obj.id === 2) {
+      this.backEndService.removeParkedVehicle(obj.regNum).subscribe((res: any) => {
+        this.response = res;
+      },
+      (err) => {
+          this.error = err;
+      });
+    }
+
+    if (obj.id === 3) {
       this.backEndService.getAvailableSlots().subscribe((res: any) => {
-          console.log(res);
           this.response = res;
       },
       (err) => {
@@ -60,17 +65,7 @@ export class ViewContainerComponent implements OnInit {
       });
     }
 
-    if (obj.id.indexOf('remove') > -1) {
-      this.backEndService.removeParkedVehicle(obj.regNum).subscribe((res: any) => {
-        console.log("res>>>>>>>>>>.",res);
-        this.response = res;
-      },
-      (err) => {
-          this.error = err;
-      });
-    }
-
-    if (obj.id.indexOf('get') > -1) {
+    if (obj.id === 4) {
       this.backEndService.getSlot(obj.regNum).subscribe((res: any) => {
         this.response = res;
       },
