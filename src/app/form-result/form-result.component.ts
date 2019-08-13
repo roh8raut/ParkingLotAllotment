@@ -27,24 +27,22 @@ export class FormResultComponent implements OnInit {
 
   onInputChangeVerify(e: any) {
     const numRegEx = new RegExp('^[0-9]$');
-    // console.log(e.ctrlKey, e);
-    if (!(e.keyCode === 8 || e.keyCode === 16 || e.keyCode === 39 || e.keyCode === 40 || e.ctrlKey === true)) {
-      if (!numRegEx.test(e.key)) {
-          this.errMsg.nativeElement.style.display = 'block';
-          return false;
-      } else {
-          this.errMsg.nativeElement.style.display = 'none';
-      }
+    if (!numRegEx.test(e.key)) {
+        this.errMsg.nativeElement.hidden = false;
+        e.preventDefault();
+        return '';
     }
   }
 
-  onSubmit(btnId: string) {
+  onSubmit(btnId: any) {
     this.show = false;
     this.submitRegNum.emit({regNum: this.regNum, id: btnId});
   }
 
   onHideOverlay() {
     this.show = true;
+    this.regNum = '';
+    // this.errMsg.nativeElement.hidden = true;
     this.hideOverlay.emit({});
   }
 
