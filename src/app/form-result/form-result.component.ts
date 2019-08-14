@@ -26,11 +26,12 @@ export class FormResultComponent implements OnInit {
   }
 
   onInputChangeVerify(e: any) {
-    const numRegEx = new RegExp('^[0-9]$');
-    if (!numRegEx.test(e.key)) {
+    const numRegEx = new RegExp('^[0-9._\b]$');
+
+    if (!numRegEx.test(e.data) && e.data !== null) {
         this.errMsg.nativeElement.hidden = false;
+        e.target.value = '';
         e.preventDefault();
-        return '';
     }
   }
 
