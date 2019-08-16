@@ -25,16 +25,6 @@ export class FormResultComponent implements OnInit {
   ngOnInit() {
   }
 
-  onInputChangeVerify(e: any) {
-    const numRegEx = new RegExp('^[0-9._\b]$');
-
-    if (!numRegEx.test(e.data) && e.data !== null) {
-        this.errMsg.nativeElement.hidden = false;
-        e.target.value = '';
-        e.preventDefault();
-    }
-  }
-
   onSubmit(btnId: any) {
     this.show = false;
     this.submitRegNum.emit({regNum: this.regNum, id: btnId});
