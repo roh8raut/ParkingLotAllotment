@@ -1,3 +1,6 @@
+$background-color: #c3322c;
+$white: white;
+
 .overlay {
     width: 100%;
     height: 200%;
@@ -15,7 +18,7 @@
         height: 400px;
         width: 82%;
         margin-left: 21px;
-        background-color: #c3322c;
+        background-color: $background-color;
         position: fixed;
         top: 22%;
         left: 16px;
@@ -71,8 +74,8 @@
             display: block;
             border-radius: 100%;
             height: 125px;
-            box-shadow: 1px 2px 10px white;
-            background-color: #c3322c;
+            box-shadow: 1px 2px 10px $white;
+            background-color:  $background-color;
             color: white;
             font-weight: bold;
         }
@@ -81,7 +84,7 @@
             position: relative;
             bottom: 80px;
             left: 31px;
-            color: white;
+            color: $white;
             font-weight: bold;
         }
 
@@ -109,7 +112,7 @@
         li {
             display: block;
             background-color: #E3D9BF;
-            margin-left: 50px;
+            margin-left: 65px;
             border-radius: 100%;
             width: 48px;
             height: 34px;
@@ -117,7 +120,7 @@
             line-height: 38px;
 
             &:nth-child(odd) {
-                margin-left: -21px;
+                margin-left: -8px;
             }
         }
     }
