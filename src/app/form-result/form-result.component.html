@@ -8,7 +8,7 @@
             <div *ngIf="formObj?.isInput">
                 <div class="form-group">
                         <h4 class="form__label">Enter Registration Number</h4>
-                        <input type="text" [(ngModel)]="regNum" class="form-control regNum__box" name="name" #n="ngModel" minlength="4" maxlength="4" (input)="onInputChangeVerify($event)" autocomplete="off" required>
+                        <input type="text" pattern="[0-9]{4}" [(ngModel)]="regNum" class="form-control regNum__box" name="name" #n="ngModel" minlength="4" maxlength="4" autocomplete="off" required>
                         <div [hidden]="(!n.dirty || n.valid )" class="errMsg" #errMsg>
                              please enter 4 digit Registration Number
                         </div>
