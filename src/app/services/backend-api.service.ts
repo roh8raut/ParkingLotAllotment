@@ -7,7 +7,8 @@ const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const url = 'http://localhost:5000';
+const url = 'https://parkinglot-api.herokuapp.com';
+// const url = 'http://localhost:5000';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class BackendApiService {
    }
 
   parkAVehicle(regNum: string) {
-    const body = {regNum: regNum};
+    const body = {regNum};
     return this.http.post(`${url}`, body, httpOptions)
                     .pipe(
                       catchError(this.handleError)
@@ -27,9 +28,7 @@ export class BackendApiService {
   }
 
   getSlot(regNum: string) {
-    // tslint:disable-next-line:object-literal-shorthand
-    const options = Object.assign(httpOptions, {params: {regNum: regNum}});
-    console.log(options);
+    const options = Object.assign(httpOptions, {params: {regNum}});
     return this.http.get(`${url}`, options)
                     .pipe(
                       catchError(this.handleError)
