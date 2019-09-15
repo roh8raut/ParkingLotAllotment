@@ -18,12 +18,15 @@
         </form>
        
         </div>
-
+        <!-- <img class="form__loader" src="/assets/car1.gif"> -->
          <ng-template #loader>  
          <ng-container [ngSwitch]="true">
                 
             <ng-container *ngSwitchCase="!(error || data)">
-                <img class="form__loader" src="/assets/b7C.gif">
+                <div class="form__loader">
+                    <img src="/assets/car1.gif">
+                </div>
+                
             </ng-container>
             <ng-container *ngSwitchCase="error !== undefined">
                 <b>{{error}}</b>
