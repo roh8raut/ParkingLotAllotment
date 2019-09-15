@@ -10,7 +10,7 @@
         </div>
     </ng-container>
     <app-form-result    (submitRegNum)="callApiService($event)" 
-                        (hideOverlay)="hideOverlay($event)"
+                        (hideOverlay)="hideOverlay()"
                         [formObj]="formObj" #overlay
                         [data]="response"
                         [error]="error"
