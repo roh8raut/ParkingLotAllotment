@@ -2,7 +2,7 @@
     <ng-container *ngFor="let obj of tabsData">
         <div class="flip-card">
                 <div class="flip-card-face"  [ngClass]= "(obj.id%2==0)?'right_card':'left_card'">
-                        <b><div class="card__face card__face--front" >Tap for options</div></b>
+                        <b><div class="card__face card__face--front" >Tap me ;)</div></b>
                         <b><div class="card__face card__face--back" (click)="cardClicked(obj)">
                            <span>{{obj.label}}</span>
                         </div></b>
