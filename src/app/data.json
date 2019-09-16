@@ -1,0 +1,32 @@
+[
+    {
+        "label": "park a vehicle", 
+        "isInput": true,
+        "id": 1,
+        "result": "Your car is parked succesfully. your SlotNumber is:",
+        "btn_label": "Submit"
+    },
+    {
+        "label": "Remove a Parked Vehicle",
+        "isInput": true,
+        "id": 2,
+        "result": "Your car is removed from our parking space.Thankyou",
+        "btn_label": "Submit"
+
+
+    },
+    {
+        "label": "No. of available Slots",
+        "isInput": false,
+        "id": 3,
+        "result": "Slots which are vacant:",
+        "btn_label": "Click to view Slots"
+    },
+    {
+        "label": "Get Slot Number where your vehicle is parked",
+        "isInput": true,
+        "id": 4,
+        "result": "your car is parked in slot.",
+        "btn_label": "Submit"
+    }
+]
