@@ -1,3 +1,6 @@
+:blue_car: A Basic minimalistic ParkingLotAllotment System where in user can book a parking slot based on registration number. User would be charged 1rs per minute. Total charge would be visible while moving the car from parking Area. Backend is made using Nodejs express framework and mongoDB under repo name roh8raut/ParkingLot_API.
+
+
 # ParkingLotAllotment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
